@@ -1,0 +1,23 @@
+{
+  "name": "yomesu-mail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fnaveira123@bitbucket.org/fnaveira123/yomesu-mail.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/fnaveira123/yomesu-mail#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "nodemailer": "^2.5.0",
+    "sendgrid": "^3.0.7",
+    "ejs": "^1.0.0"
+  }
+}

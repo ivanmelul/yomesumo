@@ -1,0 +1,36 @@
+.footer {
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	height:40px;
+	background:$blue-footer;
+	display:flex;
+	flex-direction:row;
+	z-index:78;
+	
+	div {
+		flex:1;
+		text-align:center;
+		line-height:40px;
+		font-size:2rem;
+		&.left {
+			background: #3e50b4;
+			a {
+				color:#fff;
+				i {
+					line-height:40px;
+				}
+			}
+		}
+		&.right {
+			background: #02a8f3;
+			a {
+				color:#fff;
+				i {
+					line-height:40px;
+				}
+			}
+		}
+	}	
+}

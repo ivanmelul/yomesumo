@@ -1,0 +1,33 @@
+{
+  "name": "yo-me-sumo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-animate": "^1.5.6",
+    "angular-aria": "^1.5.6",
+    "angular-material": "^1.0.9",
+    "angular-password": "^1.0.1",
+    "angular-scroll": "^1.0.0",
+    "angular-ui-router": "^0.3.2",
+    "express": "^4.14.0",
+    "font-awesome": "~4.6.3",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "lf-ng-md-file-input": "^1.4.8",
+    "ngmap": "^1.17.8"
+  }
+}

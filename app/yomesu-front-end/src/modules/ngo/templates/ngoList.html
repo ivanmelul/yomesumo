@@ -1,0 +1,31 @@
+<h2 class="md-display-1">¡Estas son las ONGs que se sumaron!</h2>
+<div layout="row">
+	<md-input-container>
+		<label>Buscar</label>
+		<input ng-model="textToSearch">
+	</md-input-container>
+</div>
+<div class="loading-container" layout="row" layout-sm="row" layout-align="center center" ng-show="loading">
+	<md-progress-circular ng-disabled="!loading" md-mode="indeterminate"></md-progress-circular>
+</div>
+<div layout="row" layout-wrap ng-hide="loading">
+	<div flex="100" flex-gt-sm="33" ng-repeat="ngo in vm.ngos | filter:textToSearch as ngoFiltered">
+		<md-card class="ngo-card">
+			<div class="card-image" ng-style="{'background-image':'url({{ngo.image || '../images/manitos.png'}})'}"></div>
+			<md-card-content>
+				<h3 class="md-headline">{{ngo.name}}</h3>
+				<div ng-show="ngo.missions.length">La cantidad de misiones es: {{ngo.missions.length}}</div>
+				<p class="description">
+					{{ngo.description}}
+				</p>
+			</md-card-content>
+			<md-card-footer>
+				<div ng-show="ngo.telephone">Telefono: {{ngo.telephone}}</div>
+				<div ng-show="ngo.email">Email: {{ngo.email}}</div>
+			</md-card-footer>
+		</md-card>
+	</div>
+	<div ng-hide="ngoFiltered.length" class="no-results">
+		No se encontraron resultados
+	</div>
+</div>

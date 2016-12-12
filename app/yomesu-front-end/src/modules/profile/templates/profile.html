@@ -1,0 +1,162 @@
+<div class="loading-container" layout="row" layout-sm="row" layout-align="center center" ng-show="loading">
+	<md-progress-circular ng-disabled="!loading" md-mode="indeterminate"></md-progress-circularº>
+</div>
+<div class="profile" ng-hide="loading" layout-align="center center">
+	<md-tabs layout-fill flex="100" flex-gt-sm="50">
+		<md-tab label="Perfil">
+			<md-tab-content flex="100" flex-gt-sm="50">
+				<md-card>
+			 		<md-card-header md-colors="::{background: 'default-primary-50'}">
+						<h3>
+							Perfil de <i>{{::vm.name}}</i>
+						</h3>
+					</md-card-header>
+					<md-card-content>
+						<div layout="row" layout-wrap>
+							<h3 flex="grow">
+								Configuración de cuenta
+							</h3>
+							<md-input-container flex="grow" flex-gt-sm="50">
+								<label>Nombre</label>
+								<input ng-model="vm.name"/>
+							</md-input-container>
+							<md-input-container flex="grow" flex-gt-sm="50">
+								<label>Apellido</label>
+								<input ng-model="vm.lastname"/>
+							</md-input-container>
+							<md-input-container  flex="grow" flex-gt-sm="50">
+								<label>Nombre de usuario</label>
+								<input ng-model="vm.username"/>
+							</md-input-container>
+							<!-- TODO: Modal de cambio de contrasenia -->
+							<md-input-container flex="grow" flex-gt-sm="50">
+								<label>Mail</label>
+								<input ng-model="vm.mail"/>
+							</md-input-container>
+							<md-input-container class="md-block" flex="100" style="text-align:center">
+								<facebook-btn type="connect" model="vm.fb"></facebook-btn>
+								<!-- TODO: Conectar Twitter -->
+							</md-input-container>
+							<md-input-container class="md-block" flex="100">
+								<label>Foto de perfil</label> <br />
+								<lf-ng-md-file-input flex="100" lf-files="files01"></lf-ng-md-file-input>
+							</md-input-container>
+							<div layout="row" flex="100" layout-align="center">
+								<img ng-src="{{vm.image}}" style="margin:auto; display:block"/>
+							</div>
+							<div layout="row" flex="100" layout-align="center">
+								<md-button flex="33" ng-click="actualizar()" class="md-raised md-primary wide">Actualizar</md-button>
+							</div>
+						</div>
+					</md-card-content>
+				</md-card>
+			</md-tab-content>
+		</md-tab>
+		<md-tab label="Preferencias">
+			<md-tab-content flex="100" flex-gt-sm="50">
+				<md-card>
+			 		<md-card-header md-colors="::{background: 'default-primary-50'}">
+						<h3>
+							Preferencias de <i>{{::vm.name}}</i>
+						</h3>
+					</md-card-header>
+					<md-card-content>
+						<p>En esta sección podés comentarnos cuales son tus mayores interesés. De esta manera podremos priorizar los mismos antes de mandarte recomendaciones. Cada campo es un autocompletar, así que a medida que vayas escribiendo, la página te va a ir mostrando opciones.</p>
+						
+						<h3>Ong<a ng-click="showAllNgos()">Ver todas</a></h3>
+						<div flex="grow">
+							<md-chips ng-model="vm.notifications.ngos" readonly="false" md-require-match="true">
+								<md-autocomplete
+									md-search-text="searchNgoText"
+									md-items="item in getNgoMatches(searchNgoText)"
+									md-item-text="item.name"
+									placeholder="ONGs de interés">
+									<span md-highlight-text="searchText">{{item.name}}</span>
+								</md-autocomplete>
+								<md-chip-template>
+									<span>
+										{{$chip.name}}
+									</span>
+								</md-chip-template>
+							</md-chips>
+						</div>
+						<h3>Tipo Actividades<a ng-click="showAllActivities()">Ver todas</a></h3>
+						<md-chips ng-model="vm.notifications.activities" readonly="false" md-require-match="true">
+							<md-autocomplete
+							md-search-text="searchActivityText"
+							md-items="item in getActivityMatches(searchActivityText)"
+							md-item-text="item.name"
+							placeholder="Actividades de interés">
+								<span md-highlight-text="searchText">{{item.name}}</span>
+							</md-autocomplete>
+							<md-chip-template>
+								<span>
+									{{$chip.name}} - {{$chip.category}} 
+								</span>
+							</md-chip-template>
+						</md-chips>
+
+						<h3>Tipo Donación<a ng-click="showAllDonations()">Ver todos</a></h3>
+						<md-chips ng-model="vm.notifications.donations" readonly="false" md-require-match="true">
+							<md-autocomplete
+							md-search-text="searchDonationText"
+							md-items="item in getDonationMatches(searchDonationText)"
+							md-item-text="item.name"
+							placeholder="Donaciones de interés">
+								<span md-highlight-text="searchText">{{item.name}}</span>
+							</md-autocomplete>
+							<md-chip-template>
+								<span>
+									{{$chip.name}} - {{$chip.category}} 
+								</span>
+							</md-chip-template>
+						</md-chips>
+
+						<h3>Region</h3>
+						<p>Escribí abajo los lugares sobre los cuales buscaremos opciones</p>
+						<map-places-yomesu markers="stage.markers" on-new-place="stage.onNewPlace" style="height:40vh"></map-places-yomesu>
+
+						<div layout="row" layout-align="center">
+							<md-button flex="33" ng-click="actualizar()" class="md-raised md-primary wide">Actualizar</md-button>
+						</div>
+					</md-card-content>
+				</md-card>
+			</md-tab-content>
+		</md-tab>
+		<md-tab label="Tus misiones">
+			<md-tab-content flex="100" flex-gt-sm="50">
+				<md-card>
+			 		<md-card-header md-colors="::{background: 'default-primary-50'}">
+						<h3>
+							Estas son las misiones que te sumaste!
+						</h3>
+					</md-card-header>
+					<md-card-content>
+						<md-card-content>
+					    	<div ng-repeat="mission in vm.myMissions" class="container">
+								<mision-card mission="mission"></mision-card>
+								<br/>
+							</div>
+							<div ng-hide="vm.myMissions.length">
+								No estas sumado a ninguna misión aún
+							</div>
+					    </md-card-content>
+					</md-card-content>
+				</md-card>
+			</md-tab-content>
+		</md-tab>
+		<!-- <md-tab label="Privacidad">
+			<h3>
+				Configuración de privacidad
+			</h3>
+			<div class="option" layout="row">
+				<span>
+					Hacer público mi perfil
+				</span>
+				<span flex></span>
+				<md-switch ng-model="isActive" aria-label="Hacer público mi perfil"></md-switch>
+			</div>
+		</md-tab> -->
+	</md-tabs>
+	
+</div>

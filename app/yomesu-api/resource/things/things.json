@@ -1,0 +1,357 @@
+[
+   {
+      "name":"LECHE EN POLVO",
+      "type":"donation",
+      "category":"Alimentos"
+   },
+   {
+      "name":"LECHE ENTERA",
+      "type":"donation",
+      "category":"Alimentos"
+   },
+   {
+      "name":"NO PERECEDEROS",
+      "type":"donation",
+      "category":"Alimentos"
+   },
+   {
+      "name":"PERECEDEROS",
+      "type":"donation",
+      "category":"Alimentos"
+   },
+   {
+      "name":"PAÑALES",
+      "type":"donation",
+      "category":"Articulos de Bebés"
+   },
+   {
+      "name":"OTROS (CUNA, COCHECITO, ETC.)",
+      "type":"donation",
+      "category":"Articulos de Bebés"
+   },
+   {
+      "name":"NIÑOS",
+      "type":"donation",
+      "category":"Ropa"
+   },
+   {
+      "name":"JÓVENES",
+      "type":"donation",
+      "category":"Ropa"
+   },
+   {
+      "name":"ADULTOS",
+      "type":"donation",
+      "category":"Ropa"
+   },
+   {
+      "name":"ARTÍCULOS DE COCINA",
+      "type":"donation",
+      "category":"Cocina"
+   },
+   {
+      "name":"ELECTRODOMÉSTICOS",
+      "type":"donation",
+      "category":"Cocina"
+   },
+   {
+      "name":"COLCHONES",
+      "type":"donation",
+      "category":"Colchones"
+   },
+   {
+      "name":"FRAZADAS",
+      "type":"donation",
+      "category":"Colchones"
+   },
+   {
+      "name":"SÁBANAS",
+      "type":"donation",
+      "category":"Colchones"
+   },
+   {
+      "name":"BIBLIOTECAS Y ARMARIOS (NUEVA)",
+      "type":"donation",
+      "category":"Muebles"
+   },
+   {
+      "name":"CAMAS Y CATRES",
+      "type":"donation",
+      "category":"Muebles"
+   },
+   {
+      "name":"MESAS Y SILLAS",
+      "type":"donation",
+      "category":"Muebles"
+   },
+   {
+      "name":"OTROS MUEBLES",
+      "type":"donation",
+      "category":"Muebles"
+   },
+   {
+      "name":"CÁMARA DE FOTOS/VIDEO (NUEVA)",
+      "type":"donation",
+      "category":"Tecnología"
+   },
+   {
+      "name":"COMPUTADORAS",
+      "type":"donation",
+      "category":"Tecnología"
+   },
+   {
+      "name":"IMPRESORAS/FOTOCOP. (NUEVA)",
+      "type":"donation",
+      "category":"Tecnología"
+   },
+   {
+      "name":"OTROS (AUDIO, VIDEO, ETC.)",
+      "type":"donation",
+      "category":"Tecnología"
+   },
+   {
+      "name":"ARTÍCULOS DEPORTIVOS",
+      "type":"donation",
+      "category":"Recreación"
+   },
+   {
+      "name":"INSTRUMENTOS MUSICALES",
+      "type":"donation",
+      "category":"Recreación"
+   },
+   {
+      "name":"JUGUETES",
+      "type":"donation",
+      "category":"Recreación"
+   },
+   {
+      "name":"MATERIAL ARTÍSTICO (NUEVA)",
+      "type":"donation",
+      "category":"Recreación"
+   },
+   {
+      "name":"UTILES ESCOLARES",
+      "type":"donation",
+      "category":"Utiles escolares"
+   },
+   {
+      "name":"ESCOLARES",
+      "type":"donation",
+      "category":"LIbros"
+   },
+   {
+      "name":"INFANTILES / JUVENILES",
+      "type":"donation",
+      "category":"LIbros"
+   },
+   {
+      "name":"OTROS",
+      "type":"donation",
+      "category":"LIbros"
+   },
+   {
+      "name":"MEDICAMENTOS (NUEVA)",
+      "type":"donation",
+      "category":"Salud"
+   },
+   {
+      "name":"PRIMEROS AUXILIOS Y ORTOPEDIA",
+      "type":"donation",
+      "category":"Salud"
+   },
+   {
+      "name":"SANGRE",
+      "type":"donation",
+      "category":"Salud"
+   },
+   {
+      "name":"OTROS",
+      "type":"donation",
+      "category":"Salud"
+   },
+   {
+      "name":"ALIMENTO BALANCEADO (NUEVA)",
+      "type":"donation",
+      "category":"Otros"
+   },
+   {
+      "name":"HIGIENE Y LIMPIEZA",
+      "type":"donation",
+      "category":"Otros"
+   },
+   {
+      "name":"MATERIALES DE CONSTRUCCIÓN",
+      "type":"donation",
+      "category":"Otros"
+   },
+   {
+      "name":"PINTURA",
+      "type":"donation",
+      "category":"Otros"
+   },
+   {
+      "name":"OTROS",
+      "type":"donation",
+      "category":"Otros"
+   },
+   {
+      "name":"DE 0 A 1 AÑO",
+      "type":"activity",
+      "category":"Niños y adolescentes"
+   },
+   {
+      "name":"DE 1 A 6 AÑOS",
+      "type":"activity",
+      "category":"Niños y adolescentes"
+   },
+   {
+      "name":"DE 7 A 12 AÑOS",
+      "type":"activity",
+      "category":"Niños y adolescentes"
+   },
+   {
+      "name":"EMBARAZADAS",
+      "type":"activity",
+      "category":"Niños y adolescentes"
+   },
+   {
+      "name":"ADOLESCENTES",
+      "type":"activity",
+      "category":"Niños y adolescentes"
+   },
+   {
+      "name":"ANCIANOS",
+      "type":"activity",
+      "category":"Ancianos"
+   },
+   {
+      "name":"ASISTENCIA SOCIAL",
+      "type":"activity",
+      "category":"Familia"
+   },
+   {
+      "name":"VIVIENDA",
+      "type":"activity",
+      "category":"Familia"
+   },
+   {
+      "name":"ADULTOS",
+      "type":"activity",
+      "category":"Comedor"
+   },
+   {
+      "name":"NIÑOS",
+      "type":"activity",
+      "category":"Comedor"
+   },
+   {
+      "name":"APOYO ESCOLAR",
+      "type":"activity",
+      "category":"Educación"
+   },
+   {
+      "name":"TALLERES",
+      "type":"activity",
+      "category":"Educación"
+   },
+   {
+      "name":"CURSOS",
+      "type":"activity",
+      "category":"Educación"
+   },
+   {
+      "name":"ADICCIONES",
+      "type":"activity",
+      "category":"Salud"
+   },
+   {
+      "name":"ENFERMEDADES",
+      "type":"activity",
+      "category":"Salud"
+   },
+   {
+      "name":"OTROS",
+      "type":"activity",
+      "category":"Salud"
+   },
+   {
+      "name":"NIÑOS",
+      "type":"activity",
+      "category":"Personas en discapacidad"
+   },
+   {
+      "name":"ADULTOS",
+      "type":"activity",
+      "category":"Personas en discapacidad"
+   },
+   {
+      "name":"INDIGENCIA",
+      "type":"activity",
+      "category":"Indigencia"
+   },
+   {
+      "name":"CARCELES",
+      "type":"activity",
+      "category":"Reinserción social"
+   },
+   {
+      "name":"OTRAS",
+      "type":"activity",
+      "category":"Reinserción social"
+   },
+   {
+      "name":"ADMINISTRACIÓN",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"COMUNICACIÓN",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"DERECHO",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"DISEÑO",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"DOCENCIA",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"MÉDICOS",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"OFICIOS",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"PSICOLOGÍA Y PSICOPEDAGOGÍA",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"TECNOLOGÍA",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"OTROS",
+      "type":"activity",
+      "category":"Profesional"
+   },
+   {
+      "name":"MEDIO AMBIENTE",
+      "type":"activity",
+      "category":"Medio ambiente"
+   }
+]

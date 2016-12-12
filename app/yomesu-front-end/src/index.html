@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!--traslúcido-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="icon" href="images/favicon.ico">
+		<title>¡Yo me sumo!</title>
+		<link rel="stylesheet" href="styles/third-part-bundle.css">
+		<link rel="stylesheet" href="styles/bundle.css">
+
+		
+
+	</head>
+	<body ng-app="yomesu" ng-cloak >
+		<div flex class="root-container" layout="column">
+			<div ui-view="menu"></div>
+			<md-progress-linear md-mode="indeterminate" ng-disabled="!loading"></md-progress-linear>
+			<md-content flex layout="column" md-scroll-y ng-style="{
+		'pointer-events': !loading?'auto':'none',
+		filter: !loading?'none':'blur(5px)'
+	}">
+				<div class="view-content" ui-view="content"></div>
+				<div ui-view="footer"></div>
+			</md-content>
+		</div>
+		<script src="scripts/third-part-bundle.js"></script>
+		<script src="scripts/bundle.js"></script>
+		<script src="http://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyCXWXCqcFYxBN_9rBFPKh_dZ4c4sdBQfK4"></script>
+	</body>
+</html>

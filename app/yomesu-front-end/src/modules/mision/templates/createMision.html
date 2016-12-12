@@ -1,0 +1,163 @@
+<md-dialog aria-label="Crear mision" class="create-mission-dialog"  ng-cloak>
+  	<form ng-cloak name="frmCreateMision" class="create-mission-form">
+		<md-toolbar>
+		  <div class="md-toolbar-tools">
+			<h2>Crear una nueva misión para la ONG</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="cancel()" aria-label="cerrar">
+			  <i class="fa fa-times" aria-hidden="true"></i>
+			</md-button>
+		  </div>
+		</md-toolbar>
+		<md-dialog-content>
+		  <div class="md-dialog-content">
+			<h2>Creemos una nueva misión</h2>
+			<div layout-gt-sm="row">
+			  <md-input-container flex="grow" class="md-block">
+				<label>Titulo de la misión</label>
+				<input ng-model="vm.name" ng-required="true">
+			  </md-input-container>
+			</div>
+			<div layout="row">
+				<md-input-container>
+					<label>Fecha de inicio</label>
+					<md-datepicker ng-model="vm.startDate" md-placeholder="Fecha de inicio"></md-datepicker>
+				</md-input-container>
+			</div>
+			<div layout="row">
+				<md-input-container flex>
+					<label>Fecha de fin</label>
+					<md-datepicker md-min-date="vm.startDate" ng-model="vm.endDate" md-placeholder="Fecha de fin"></md-datepicker>
+				</md-input-container>
+			</div>
+			<div layout="row" layout-gt-sm="row">
+				<md-input-container flex>
+					<md-switch ng-model="vm.active" aria-label="Activada" ng-true-value="1" ng-false-value="0">
+						Busqueda activada
+					</md-switch>
+				</md-input-container>
+			</div>
+			<div layout-gt-sm="row">
+			  <md-input-container flex="grow" class="md-block">
+				<label>Descripción</label>
+				<textarea ng-model="vm.description" md-maxlength="300" rows="5" md-select-on-focus></textarea>
+			  </md-input-container>
+			</div>
+			<div layout="row">
+			  <md-input-container class="md-block" flex="grow">
+				<label>Hash tags</label>
+				<md-chips ng-model="vm.hashTags"></md-chips>
+			  </md-input-container>
+			</div>
+			<div layout="row">
+			  <md-input-container class="md-block" flex="grow">
+				<lf-ng-md-file-input flex="grow" flex-gt-sm="50" lf-files="files01"></lf-ng-md-file-input>
+			  </md-input-container>
+			</div>
+			<div layout="row" style="height:25vh;">
+				<img flex ng-src="{{vm.image}}" style="margin:auto;display:block;height:100%"/>
+			</div>
+
+			<h3>Etapas</h3>
+			<div layout="row">
+			  <md-input-container class="md-block">
+				<label>Agregar Etapa</label>
+				<input ng-model="newStageName">
+			  </md-input-container>
+			  <md-button ng-disabled="!newStageName.length" aria-label="Nuevo" class="md-fab" ng-click="addStage()">
+				<i class="fa fa-plus" aria-hidden="true"></i>
+			  </md-button>
+			</div>
+			<md-card style="height:1180px">
+			  <md-tabs layout-fill ng-show="vm.stages.length">
+				<md-tab label="{{stage.name}}" ng-repeat="stage in vm.stages">
+				   <md-tab-content>
+					 <md-input-container class="md-block delete-stage" layout="row">
+					  <i>Eliminar etapa</i>
+					  <md-button aria-label="Delete" class="md-fab md-mini" ng-click="removeStage(stage)">
+						<i class="fa fa-trash" aria-hidden="true"></i>
+					  </md-button>
+					</md-input-container>
+
+					<div layout-gt-sm="column">
+						<div layout="row">
+							<md-input-container flex>
+								<label>Fecha de inicio</label>
+								<md-datepicker ng-model="stage.startDate" md-placeholder="Fecha de inicio"></md-datepicker>
+							</md-input-container>
+						</div>
+						<div layout="row">
+							<md-input-container flex>
+								<label>Fecha de fin</label>
+								<md-datepicker ng-model="stage.endDate" md-placeholder="Fecha de fin"></md-datepicker>
+							</md-input-container>
+						</div>
+						<div layout="row" layout-gt-sm="row">
+							<md-input-container flex>
+								<md-switch ng-model="stage.active" aria-label="Activada" ng-true-value="1" ng-false-value="0">
+									Busqueda activada
+								</md-switch>
+							</md-input-container>
+						</div>
+					  <div layout="row">
+						<md-input-container class="md-block" flex="grow">
+						  <label>Descripción</label>
+						  <input ng-model="stage.description">
+						</md-input-container>
+						</div>
+						<div layout="row">
+							<map-places-yomesu markers="stage.markers" on-new-place="stage.onNewPlace"></map-places-yomesu>
+						</div>
+					  <div layout="row">
+						<md-input-container class="md-block" flex="grow">
+						  <label>¿Que se necesita?</label>
+						  <md-chips ng-model="stage.requiredThings" md-require-match="true" md-transform-chip="createChip($chip)">
+					  		<md-autocomplete
+							md-search-text="searchRequiredThingsText"
+							md-items="item in getRequiredThingsMatches(searchRequiredThingsText)"
+							md-item-text="item.description"
+							placeholder="Cosas necesarias">
+								<span md-highlight-text="searchText">{{item.name}} ({{item.category}})</span>
+							</md-autocomplete>
+							<md-chip-template ng-click="chipClick($chip)">
+							  <span>
+								{{$chip.name}} ({{$chip.category}})
+							  </span>
+							  <span class="status-{{$chip.urgency}}">
+								<i class="fa fa-circle" aria-hidden="true"></i>
+							  </span>
+							</md-chip-template>
+						  </md-chips>
+						</md-input-container>
+					  </div>
+					  <div layout="row">
+						<md-input-container class="md-block" flex="grow">
+						  <label>Hash tags</label>
+						  <md-chips ng-model="stage.hashTags"></md-chips>
+						</md-input-container>
+					  </div>
+					</div>
+				  </div>
+				</md-tab-content>
+			  </md-tab>
+			</md-tabs>
+			<div layout="row" ng-hide="vm.stages.length">
+			  <span>No se cargó ninguna etapa aún</span>
+			</div>
+		  </md-cards>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<div ng-show="loading">
+				<md-progress-circular ng-disabled="!loading" md-mode="indeterminate"></md-progress-circular>
+			</div>
+		  <span flex></span>
+		  <md-button ng-click="cancel()" ng-disabled="loading">
+		   Cancelar
+		  </md-button>
+		  <md-button ng-click="save()" class="md-raised" ng-disabled="loading || frmCreateMision.$invalid">
+			Aceptar
+		  </md-button>
+		  	
+		</md-dialog-actions>
+	</form>
+</md-dialog>

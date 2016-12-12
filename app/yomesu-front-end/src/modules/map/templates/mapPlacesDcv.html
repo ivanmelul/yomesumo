@@ -1,0 +1,7 @@
+<md-input-container class="md-block map-places map-places-dcv" flex="grow" md-no-float>
+	<input class="places-input" placeholder="Lugares">
+	<span ng-repeat="marker in markers" ng-click="markerClick(marker)">
+		{{marker.title}}{{$last?'':', '}}
+	</span>
+</md-input-container>
+<map-yomesu markers="markers"></map-yomesu>

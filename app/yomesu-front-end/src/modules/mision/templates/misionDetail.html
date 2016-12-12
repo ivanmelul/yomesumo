@@ -1,0 +1,107 @@
+<div class="loading-container" layout="row" layout-sm="row" layout-align="center center" ng-show="loading">
+	<md-progress-circular ng-disabled="!loading" md-mode="indeterminate"></md-progress-circular>
+</div>
+<md-card class="detail-mission" ng-hide="loading">
+	<md-card-header md-colors="::{background: 'default-primary-50'}">
+		<md-card-header-text>
+			<h3 class="mission-title md-headline">{{vm.name}}</h3>
+		</md-card-header-text>
+	</md-card-header>
+	
+	<div class="card-image" style="background-image:url({{vm.image}})"></div>
+
+	<md-card-actions layout="row" layout-align="start center" class="mission">
+		<md-button aria-label="Yo me sumo" class="md-fab md-mini more-button" ng-if="vm.active" ng-click="yoMeSumo(vm, undefined)">
+			<i class="fa fa-plus" aria-hidden="true"></i>
+		</md-button>
+	</md-card-actions>
+	<md-card-content>
+		<div class="location truncate" ng-show="vm.markers.length">
+			<i class="fa fa-map-marker" aria-hidden="true"></i>
+			<span ng-repeat="stage in vm.stages">
+				<span ng-repeat="marker in stage.markers">
+					{{marker.title}}.
+				</span>
+			</span>
+		</div>
+		<p ng-show="vm.startDate != vm.endDate">
+			Desde {{vm.startDate | date:'dd/MM/yyyy'}} hasta {{vm.endDate | date:'dd/MM/yyyy'}}
+		</p>
+		<p ng-hide="vm.startDate != vm.endDate">
+			El {{vm.startDate | date:'dd/MM/yyyy'}}
+		</p>
+		<p class="description">
+			{{vm.description}}
+		</p>
+		<div ng-show="vm.voluntaries.length">
+			<h4>Voluntarios que se sumaron:</h4>
+			<span ng-repeat="voluntary in vm.voluntaries">{{voluntary.username}}<br/> </span>
+		</div>
+		<div layout="row" layout-gt-sm="row" layout-wrap class="stage-detail">
+			<div flex="100" flex-gt-sm="33" ng-repeat="stage in vm.stages">
+				<md-card>
+					 <md-card-header md-colors="::{background: 'default-primary-600'}">
+					    <md-card-header-text>
+					   		<h3 class="md-headline">{{stage.name}}</h3>
+					    </md-card-header-text>
+					  </md-card-header>
+					  <md-card-actions layout="row" layout-align="start center" class="mission">
+						<md-button aria-label="Yo me sumo" class="md-fab md-mini more-button" ng-if="stage.active" ng-click="yoMeSumo(vm, stage)">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+						</md-button>
+					</md-card-actions>
+					<md-card-content>
+						<div class="location truncate" ng-show="stage.markers.length">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							<span ng-repeat="marker in stage.markers" >
+								{{marker.title}}.
+							</span>
+						</div>
+						<p ng-show="stage.startDate != stage.endDate">
+							Desde {{stage.startDate | date:'dd/MM/yyyy'}} hasta {{stage.endDate | date:'dd/MM/yyyy'}}
+						</p>
+						<p ng-hide="stage.startDate != stage.endDate">
+							El {{stage.startDate | date:'dd/MM/yyyy'}}
+						</p>
+						<p class="description">
+							{{stage.description}}
+						</p>
+						<hr ng-show="stage.voluntaries.length"/>
+						<p ng-show="stage.voluntaries.length">
+							Voluntarios que se sumaron:
+							<span ng-repeat="voluntary in stage.voluntaries">{{voluntary.username}} <br/></span>
+						</p>
+						<hr ng-show="!stage.voluntaries.length && stage.active"/>
+						<p ng-show="!stage.voluntaries.length && stage.active">
+							¡Se el primero en sumarte a la etapa!
+						</p>
+						<p ng-show="stage.voluntaries.length && !stage.active">
+							La etapa ya fue cubierta. ¡Gracias!
+						</p>
+						<hr ng-show="stage.requiredThings.length"/>
+						<p ng-show="stage.requiredThings.length">
+							<span>Se necesita:</span>
+							<div class="required-things" ng-repeat="thing in stage.requiredThings">
+								{{thing.name}} 
+								<i>({{thing.category}})</i>
+								<i class="fa fa-circle status-{{thing.urgency}}" aria-hidden="true"></i>
+							</div>
+						</p>
+					</md-card-content>
+					<md-card-footer md-colors="::{background: 'default-primary-50'}">
+						<div class="truncate">
+							<a ng-repeat="tag in stage.hashTags" target="_blank" ng-href="https://twitter.com/hashtag/{{tag}}?src=hash">#{{tag}} </a>
+						</div>
+					</md-card-footer>
+				</md-card>
+
+			</div>
+		</div>
+	</md-card-content>
+	<md-card-footer>
+		<b class="truncate">{{vm.ong.name}}</b>
+		<div class="truncate">
+			<a ng-repeat="tag in vm.hashTags" target="_blank" ng-href="https://twitter.com/hashtag/{{tag}}?src=hash">#{{tag}} </a>
+		</div>
+	</md-card-footer>
+</md-card>

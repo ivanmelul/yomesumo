@@ -1,0 +1,26 @@
+.voluntarty-card {
+	height: 21rem;
+
+	> .card-image {
+	    width: 100%;
+	    height: 50%;
+	    background-position: center center;
+	    background-size:cover;
+	    background-repeat: no-repeat;
+	}
+
+}
+	.action-buttons {
+    	position:relative;
+
+    	.facebook {
+    		position:absolute;
+    		right:0;
+			color: #3e50b4;
+    	}
+    	.twitter {
+    		position:absolute;
+    		right:3rem;
+			color: #02a8f3;
+    	}
+    }

@@ -1,0 +1,247 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Yomesumo! - Te sumaste a una etapa"</title>
+    <style type="text/css">
+        body {margin: 0; padding: 0; min-width: 100%!important;}
+        img {height: auto; max-height: 100px;}
+        .content {width: 100%; max-width: 600px;}
+        .header {padding: 40px 30px 20px 30px;}
+        .innerpadding {padding: 30px 30px 30px 30px;}
+        .borderbottom {border-bottom: 1px solid #f2eeed;}
+        .subhead {font-size: 15px; color: #ffffff; font-family: sans-serif; letter-spacing: 10px;}
+        .h1, .h2, .h3, .bodycopy {color: #153643; font-family: sans-serif;}
+        .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}
+        .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weight: bold;}
+        .h3 {padding: 0 0 15px 0; font-size: 18px; line-height: 28px; font-weight: bold;}
+        .bodycopy {font-size: 16px; line-height: 22px;}
+        .ong {font-size: 14px; line-height: 22px; font-family: sans-serif; font-style: italic}
+        .button {text-align: center; font-size: 18px; font-family: sans-serif; font-weight: bold; padding: 0 30px 0 30px;}
+        .button a {color: #ffffff; text-decoration: none;}
+        .footer {padding: 20px 30px 15px 30px;}
+        .footercopy {font-family: sans-serif; font-size: 14px; color: #ffffff;}
+        .footercopy a {color: #ffffff; text-decoration: underline;}
+
+        @media only screen and (max-width: 550px), screen and (max-device-width: 550px) {
+            body[yahoo] .hide {display: none!important;}
+            body[yahoo] .buttonwrapper {background-color: transparent!important;}
+            body[yahoo] .button {padding: 0px!important;}
+            body[yahoo] .button a {background-color: #e05443; padding: 15px 15px 13px!important;}
+            body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!important; font-weight: bold;}
+        }
+
+        /*@media only screen and (min-device-width: 601px) {
+          .content {width: 600px !important;}
+          .col425 {width: 425px!important;}
+          .col380 {width: 380px!important;}
+      }*/
+
+  </style>
+</head>
+
+<body yahoo="" bgcolor="#f6f8f1">
+    <table width="100%" bgcolor="#f6f8f1" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td>
+    <!--[if (gte mso 9)|(IE)]>
+      <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td>
+            <![endif]-->     
+            <table bgcolor="#ffffff" class="content" align="center" cellpadding="0" cellspacing="0" border="0">
+              <tbody><tr>
+                <td bgcolor="#c7d8a7" class="header">
+                  <table class="col425" align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 425px;">  
+                    <tbody><tr>
+                      <td height="70">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tbody>
+                            <tr>
+                              <td height="70" style="padding: 0 20px 20px 0;">
+                                <img class="fix" src="<%- config.environment.apiUrl %>/images/header" border="0" alt="">
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+          <!--[if (gte mso 9)|(IE)]>
+                </td>
+              </tr>
+          </table>
+          <![endif]-->
+      </td>
+  </tr>
+  <tr>
+    <td class="innerpadding borderbottom">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+          <td class="h2">
+            <%- body.data.ong.name %> le da la bienvenida a la etapa "<%- body.data.stage.name %>" de la misión "<%- body.data.mission.name %>"
+        </td>
+    </tr>
+    <tr>
+      <td class="bodycopy">
+        A continuación encontrará toda la información necesaria para colaborar:
+    </td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+    <td class="innerpadding borderbottom">
+      <table width="115" align="left" border="0" cellpadding="0" cellspacing="0">  
+        <tbody><tr>
+          <td height="115" style="padding: 0 20px 20px 0;">
+            <img class="fix" src="<%- body.data.stage.image %>" width="115" height="115" border="0" alt="">
+        </td>
+    </tr>
+</tbody></table>
+          <!--[if (gte mso 9)|(IE)]>
+            <table width="380" align="left" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <![endif]-->
+                  <table class="col380" align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 380px;">  
+                    <tbody><tr>
+                      <td>  
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tbody><tr>
+                            <td class="bodycopy">                              
+                            <%- body.data.stage.description %>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 20px 0 0 0;">
+                          <table class="buttonwrapper" bgcolor="#e05443" border="0" cellspacing="0" cellpadding="0">
+                            <tbody><tr>
+                              <td class="button" height="45">
+                                <a href="<%- config.environment.frontUrl %>/#/main/stage?id=<%- body.data.stage._id %>">Ver más detalle</a>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+
+</tbody></table>
+
+
+      </td>
+  </tr>
+
+<tr>
+    <td class="innerpadding borderbottom">
+        La etapa se desarrollará <%- body.duration %>
+  </td>
+</tr>
+
+<tr>
+    <td class="innerpadding borderbottom">
+      <table width="115" align="left" border="0" cellpadding="0" cellspacing="0">  
+        <tbody><tr>
+          <td height="115" style="padding: 0 20px 20px 0;">
+            <img class="fix" src="<%- body.data.mission.image %>" width="115" height="115" border="0" alt="">
+        </td>
+    </tr>
+</tbody></table>
+          <!--[if (gte mso 9)|(IE)]>
+            <table width="380" align="left" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td>
+                  <![endif]-->
+                  <table class="col380" align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 380px;">  
+                    <tbody><tr>
+                      <td>  
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tbody><tr>
+                            <td class="bodycopy">                              
+                            <%- body.data.mission.description %>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 20px 0 0 0;">
+                          <table class="buttonwrapper" bgcolor="#e05443" border="0" cellspacing="0" cellpadding="0">
+                            <tbody><tr>
+                              <td class="button" height="45">
+                                <a href="<%- config.environment.frontUrl %>/#/main/mission?id=<%- body.data.mission._id %>">Ver más detalle</a>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </td>
+</tr>
+
+</tbody></table>
+
+
+      </td>
+  </tr>
+
+<tr>
+    <td class="innerpadding bodycopy">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td class="h3">
+                        <%- body.data.ong.name %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ong">
+                        <%- body.data.ong.description %>
+                    </td>
+                </tr>
+            </tbody>    
+        </table>
+    </td>
+</tr>
+<tr>
+    <td class="footer" bgcolor="#44525f">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+          <td align="center" class="footercopy">
+            ® Yomesumo!, Buenos Aires 2016<br>
+            Todos los derechos reservados.
+        </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 20px 0 0 0;">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td width="37" style="text-align: center; padding: 0 10px 0 10px;">
+              <a href="https://www.facebook.com/Yomesumo-1145702682139670/?ref=br_rs">
+                <img src="<%- config.environment.apiUrl %>/images/fb" width="37" height="37" alt="Facebook" border="0">
+            </a>
+        </td>
+        <td width="37" style="text-align: center; padding: 0 10px 0 10px;">
+          <a href="http://www.twitter.com/">
+            <img src="<%- config.environment.apiUrl %>/images/tw" width="37" height="37" alt="Twitter" border="0">
+        </a>
+    </td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+    <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+    </table>
+    <![endif]-->
+</td>
+</tr>
+</tbody></table>
+
+<!--analytics-->
+<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://tutsplus.github.io/github-analytics/ga-tracking.min.js"></script>
+
+</body></html>

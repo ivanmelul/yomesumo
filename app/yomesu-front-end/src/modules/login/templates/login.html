@@ -1,0 +1,38 @@
+<div class="login" layout="row" layout-align="center center">
+	<div flex></div>
+	<form name="userForm">
+		<div layout="column" layout-gt-sm="row" layout-align="center center">
+			<facebook-btn type="login"></facebook-btn>
+		</div>
+		<div layout="column" layout-gt-sm="row" layout-align="center center">
+			<twitter-btn type="login"></twitter-btn>
+		</div>	
+		<hr>
+		<div layout="row" layout-align="center center">
+			<md-input-container>
+			<label>Usuario / e-mail</label>
+				<input ng-keyup="$event.keyCode == 13 && login()" name="username" ng-model="vm.username" required />
+				<div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+					<div ng-message="required">This is required!</div>
+				</div>
+			</md-input-container>
+		</div>
+		<div layout="row" layout-align="center center">
+			<md-input-container>
+				<label>Password</label>
+				<input ng-keyup="$event.keyCode == 13 && login()" type="password" name="password" ng-model="vm.password" required/>
+				<div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+					<div ng-message="required">This is required!</div>
+				</div>
+			</md-input-container>
+		</div>
+		<div layout="row" layout-align="center center">
+			<md-button class="md-raised" ng-click="login()">Login</md-button>
+		</div>
+		<hr>
+		<div layout="column">
+			<md-button class="md-raised" ng-click="registro()">No tenés una cuenta? Registrate!</md-button>
+		</div>
+	</form>
+	<div flex></div>
+</div>

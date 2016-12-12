@@ -1,0 +1,41 @@
+.detail-mission {
+	h3 {
+		padding:0;
+		margin:0;
+	}
+	.mission-title {
+		text-align: center;
+	}
+	.stage-detail {
+		justify-content: space-around;
+		md-card {
+			md-card-header {
+
+			}
+		}
+	}
+	.status-0{
+		color:$green;
+	}
+	.status-1{
+		color:$orange;
+	}
+	.status-2{
+		color:$red;
+	}
+	.required-things {
+		line-height:2rem;
+	}
+	.card-image {
+		width:100%;
+		height:25vh;
+		background-repeat:no-repeat;
+		background-position: center center;
+		background-size:cover;
+	}
+	.location {
+		.fa-map-marker {
+			color: $red;
+		}
+	}
+}

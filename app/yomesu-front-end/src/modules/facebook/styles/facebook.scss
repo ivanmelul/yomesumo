@@ -1,0 +1,22 @@
+facebook-btn {
+	.facebook button {
+		width: 18rem;
+		background-color: $blue !important;
+		color: $gray-light !important;
+	}
+
+	.facebook span{
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.facebook .fa-facebook{
+		padding-right:1.5rem;
+	    padding-left: 0.7rem;
+		border-right: solid 1px white;
+	}
+
+	.facebook .text {
+		margin-left: 1rem;
+	}
+}

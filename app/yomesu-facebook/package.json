@@ -1,0 +1,25 @@
+{
+  "name": "yomesu-facebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://javiesses@bitbucket.org/javiesses/yomesu-facebook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/javiesses/yomesu-facebook#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "fb": "^1.1.1",
+    "q": "^1.4.1",
+    "underscore": "^1.8.3",
+    "xmlhttprequest": "^1.8.0",
+    "mongoose": "^4.4.19"
+  }
+}

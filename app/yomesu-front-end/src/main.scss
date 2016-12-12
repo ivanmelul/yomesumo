@@ -1,0 +1,57 @@
+
+/* COLORES */
+$red: #ff0000;
+$green: #3aa721;
+$orange: #ff5722;
+$gray-medium: #757575;
+$gray-light: #eeeeee;
+$blue: #3F51B5;
+$twitter-blue: #55acee;
+$blue-footer: #1eb7ec;
+/* END COLORES */
+
+
+body {
+	font-family:arial;
+	
+	> div.root-container {
+		height:100%;
+	}
+}
+a {
+	text-decoration:none;
+}
+
+.loading-container {
+	padding:1rem
+}
+
+.truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.view-content {
+	overflow: scroll;
+	height: calc(100vh - 105px);
+}
+
+a:link {
+    color: rgba($green,0.8);
+}
+
+/* visited link */
+a:visited {
+	color: rgba($green,0.9);
+}
+
+/* mouse over link */
+a:hover {
+	color: rgba($green,1);
+}
+
+/* selected link */
+a:active {
+	color: $blue;
+}

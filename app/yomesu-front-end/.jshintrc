@@ -1,0 +1,16 @@
+{
+  "eqnull": true,
+  "eqeqeq": true,
+  "undef": true,
+  "globals": {
+    "angular": true,
+    "FB": true,
+    "console": true,
+    "navigator": true,
+    "FormData": true,
+    "localStorage": true,
+    "google": true
+  },
+  "debug": true,
+  "multistr": true
+}

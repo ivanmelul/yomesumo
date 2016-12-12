@@ -1,0 +1,104 @@
+mision-card {
+	height:100%;
+	width:100%;
+
+	md-card-header-text {
+		h3 {
+			margin:0;
+			padding:0;
+			text-align:center;
+		}
+	}
+	.mision-card {
+		height:100%;
+		position: relative;
+		margin:0;
+		max-height: inherit;
+
+		> .card-image {
+		    width: 100%;
+		    height: 50%;
+		    background-position: center center;
+		    background-repeat: no-repeat;
+		    background-size:cover;
+		}
+		> md-card-content {
+			.location {
+				font-size: 0.8rem;
+				color: $green;
+			}
+			.description {
+				font-size: 0.8rem;
+				color: $gray-medium;
+			}
+		}
+
+		> md-card-title {
+			margin:0;
+			padding:0;
+			h3 {
+				padding:0;
+				margin:0;
+				font-size: 1rem;
+			}
+		}
+		> md-card-footer {
+			b {
+				display:block;
+			}
+			a {
+				color: $green;
+				margin-right:0.5rem;
+			}
+		}
+	}
+}
+md-card.detail-mission {
+	> div {
+		> img {
+			display:block;
+			margin:auto;
+		}
+	}
+}
+
+md-card-actions.mission {
+	position:relative;
+	margin:0;
+
+	.yomesumo-label {
+		position: absolute;
+		line-height:40px;
+		right: 60px;
+		top: -1.3rem;
+	}
+	.more-button {
+		position: absolute;
+		right: 10px;
+		top: -1.3rem;
+	}
+}
+
+create-mission {
+	display:block;
+	height:600px;
+
+}
+.delete-stage {
+	text-align:right
+}
+.create-mission-form {
+	.status-0{
+		color:$green;
+	}
+	.status-1{
+		color:$orange;
+	}
+	.status-2{
+		color:$red;
+	}
+	map-places-yomesu {
+		width:100%;
+		height:25rem;
+	}
+}

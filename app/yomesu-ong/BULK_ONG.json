@@ -1,0 +1,11 @@
+//mongoimport --db yomesu --collection ong --type json --file seed.json --jsonArray
+[
+	{
+		"name": "Fundación SI",
+		"description":"Una fundacion que se encarga de realizar distintas actividades en distintos sectores de la sociedad",
+		"address":"Armenia 2345",
+		"telephone":"+54 11 3456 7808",
+		"contact": "Manuel",
+		"email": "fundacion@si.com"
+	}
+]

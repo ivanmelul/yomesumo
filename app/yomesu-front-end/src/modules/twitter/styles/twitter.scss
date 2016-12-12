@@ -1,0 +1,21 @@
+twitter-btn {
+	.twitter button {
+		width: 18rem;
+		background-color: $twitter-blue !important;
+		color: $gray-light !important;
+	}
+
+	.twitter span{
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.twitter .fa-twitter{
+		padding-right:1rem;
+		border-right: solid 1px white;
+	}
+
+	.twitter .text {
+		margin-left: 1rem;
+	}
+}

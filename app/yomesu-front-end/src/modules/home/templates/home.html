@@ -1,0 +1,20 @@
+<div layout="column" layout-gt-sm="row">
+	<div class="mision-grid" flex="100" flex-gt-sm="50" layout="column" layout-wrap>
+		<div layout="row" layout-sm="row" layout-align="center center" ng-show="vm.loading">
+			<md-progress-circular ng-disabled="!vm.loading" md-mode="indeterminate"></md-progress-circular>
+		</div>
+		<div style="width:100%;">
+			<div ng-repeat="mission in vm.missions" class="container">
+				<mision-card mission="mission" ng-class="{selected:vm.selectedId == mission._id}" id="{{mission._id}}"></mision-card>
+			</div>
+		</div>
+	</div>
+	<div class="social-map" hide show-gt-sm flex="50" style="height:100%">
+		<md-card style="height:70%">
+			<map-yomesu markers="vm.markers" get-marker-reference="true"></map-yomesu>
+		</md-card>
+		<md-card style="height:30%">
+			<social-feed social-media="vm.social"></social-feed>
+		</md-card>
+	</div>
+</div>

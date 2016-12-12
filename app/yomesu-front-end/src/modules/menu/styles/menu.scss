@@ -1,0 +1,54 @@
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    margin: -1rem;
+}
+
+.profile-btn {
+  border: 2px solid white;
+}
+
+.logo-btn {
+  cursor:pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  height:3rem;
+
+  .logo {
+    width: 2.5rem;
+    flex:1;
+    height: auto;
+    img {
+      height:100%;
+      border: 2px solid #fff;
+      border-radius: 100%;
+    }
+  }
+  h2 {
+    flex:3;
+    line-height:3rem;
+    margin-left:1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+}
+
+
+
+.navigator-search {
+  input {
+    color: white;
+    text-align:right;
+    height: 4rem;
+    padding-top: 2rem;
+  }
+}
+/*.magnify-icon {
+  &.active {
+    color: black;
+  }
+}
+.md-toolbar-tools {
+  color: #eee;
+}*/

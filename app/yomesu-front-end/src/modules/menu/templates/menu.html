@@ -1,0 +1,72 @@
+<div ng-controller="menuCtrl">
+	<md-toolbar md-scroll-shrink="true">
+		<div class="md-toolbar-tools">
+				<div class="logo-btn" ng-click="vm.goToHome()">
+					<div class="logo">
+						<img src="./images/logo_yms.png"></img>
+					</div>
+					
+					<h2 ng-show="$mdMedia('gt-xs')">¡Yo me sumo!</h2>
+				</div>
+				<span flex></span>
+				<md-input-container md-no-float class="md-block navigator-search" ng-show="showSearch && $state.current.name == 'main.home'">
+		        	<input ng-model="vmRoot.searchText" placeholder="Buscador" ng-model-options="{ debounce: 1000 }">
+		        </md-input-container>
+				<md-button aria-label="Buscar" class="magnify-icon md-icon-button" ng-click="showSearch=!showSearch" ng-show="$state.current.name == 'main.home'" ng-class="{'active':showSearch}">
+					<i class="fa fa-search fa-2x" aria-hidden="true"></i>
+		        </md-button>
+		        <md-menu>
+					<!-- Trigger element is a md-button with an icon -->
+					<md-button ng-click="$mdOpenMenu($event)" aria-label="Abrir menu" class="md-icon-button">
+						<i class="fa fa-th fa-2x" aria-hidden="true"></i>
+					</md-button>
+
+					<md-menu-content>
+						<md-menu-item>
+							<md-button class="md-primary" ng-click="vm.goToNgoList()">
+								<i class="fa fa-building fa" aria-hidden="true"></i> Ongs
+							</md-button>
+						</md-menu-item>
+						<md-menu-item>
+							<md-button class="md-primary" ng-click="vm.goToVoluntaryList(vm.voluntary._id)">
+							<i class="fa fa-users fa" aria-hidden="true"></i>  Voluntarios</md-button>
+						</md-menu-item>
+						<!-- <md-menu-item>
+							<md-button class="md-primary" ng-click="vm.goToMissionList(vm.voluntary._id)">
+							<i class="fa fa-calendar-o fa" aria-hidden="true"></i>
+								Misiones 
+							</md-button>
+						</md-menu-item> -->
+					</md-menu-content>
+				</md-menu>
+				<md-menu>
+					<!-- Trigger element is a md-button with an icon -->
+					<md-button ng-click="$mdOpenMenu($event)" aria-label="Abrir menu" class="md-icon-button profile-btn">
+						<i ng-if="!vm.voluntary.image" class="fa fa-user fa-2x" aria-hidden="true" style="line-height:1rem;margin-left:-1px"></i>
+						<img class="profile-icon" ng-if="vm.voluntary.image" ng-src="{{vm.voluntary.image}}"/>
+					</md-button>
+
+					<md-menu-content>
+						<md-menu-item ng-show="!vm.userLogged">
+							<md-button class="md-primary" ng-click="vm.goToLogin()">Login</md-button>
+						</md-menu-item>
+						<md-menu-item ng-show="vm.userLogged">
+							<md-button class="md-primary" ng-click="vm.goToProfile(vm.voluntary._id)">Perfil</md-button>
+						</md-menu-item>
+						<md-divider></md-divider>
+						<md-menu-item ng-repeat="ngo in vm.voluntary.ngos">
+							<md-button class="md-primary" ng-click="vm.goToNgo(ngo._id)">{{ngo.name}}</md-button>
+						</md-menu-item>
+						<md-divider></md-divider>
+						<!-- <md-menu-item>
+							<md-button class="md-primary" ng-click="vm.gotoTermsAndConditions()">Terminos y condiciones</md-button>
+						</md-menu-item> -->
+						<md-menu-item ng-show="vm.userLogged">
+							<md-button class="md-primary" ng-click="logout()">Cerrar sesión</md-button>
+						</md-menu-item>
+					</md-menu-content>
+				</md-menu>
+		</div>
+
+	</md-toolbar>
+</div>

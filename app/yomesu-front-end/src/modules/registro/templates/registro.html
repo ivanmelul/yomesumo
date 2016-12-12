@@ -1,0 +1,40 @@
+<div class="login" layout="row" layout-align="center center">
+	<div flex></div>
+	<form name="userForm">
+		<div layout="row" layout-align="center center">
+			<span>¡Regístrate para poder sumarte a las misiones!</span>	
+		</div>
+		<div layout="row" layout-align="center center">
+			<md-input-container>
+			<label>Email</label>
+				<input name="mail" type="mail" ng-model="vm.mail" required />
+				<div ng-messages="userForm.mail.$error">
+					<div ng-message="required">Este campo es requerido!</div>
+				</div>
+			</md-input-container>
+		</div>
+		<div layout="row" layout-align="center center">
+			<md-input-container>
+			<label>Contraseña</label>
+				<input type="password" name="password" ng-model="vm.password" required/>
+				<div ng-messages="userForm.password.$error">
+					<div ng-message="required">Este campo es requerido!</div>
+				</div>
+			</md-input-container>
+		</div>
+		<div layout="row" layout-align="center center">
+			<md-input-container>
+			<label>Confirme la contraseña</label>
+				<input type="password" name="confirmPassword" ng-model="vm.confirmPassword" match-password="password" required/>
+				<div ng-messages="userForm.confirmPassword.$error">
+					<div ng-message="required">Este campo es requerido!</div>
+					<div ng-message="passwordMatch">Tus contraseñas no coinciden!</div>
+				</div>
+			</md-input-container>
+		</div>
+		<div layout="row" layout-align="center center">
+			<md-button class="md-raised" ng-click="registrar()">Registrarme</md-button>
+		</div>
+	</form>
+	<div flex></div>
+</div>

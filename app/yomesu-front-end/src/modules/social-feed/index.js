@@ -1,0 +1,1 @@
+var socialFeed = angular.module('socialFeed', []);

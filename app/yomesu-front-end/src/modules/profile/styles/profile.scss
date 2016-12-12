@@ -1,0 +1,34 @@
+.profile {
+	position:relative;
+	md-tabs {
+		position:initial;
+		margin:auto;
+
+		.option {
+			line-height: 4.5rem;
+		}
+
+		md-card-header {
+			h3 {
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+
+	md-tab-content {
+		margin:auto;
+	}
+	.wide {
+		margin: 1rem;
+		width: 98%;		
+	}
+
+	h3 a {
+		cursor: pointer;
+		text-decoration: underline;
+		font-size: 0.7rem;
+	    font-weight: normal;
+		margin-left: 1rem;
+	}
+}

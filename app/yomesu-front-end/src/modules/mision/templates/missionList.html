@@ -1,0 +1,31 @@
+<h2 class="md-display-1">¡Estas son las misiones actuales!</h2>
+<div layout="row">
+	<md-input-container>
+		<label>Buscar</label>
+		<input ng-model="textToSearch">
+	</md-input-container>
+</div>
+<div class="loading-container" layout="row" layout-sm="row" layout-align="center center" ng-show="loading">
+	<md-progress-circular ng-disabled="!loading" md-mode="indeterminate"></md-progress-circular>
+</div>
+<div layout="row" layout-wrap ng-hide="loading">
+	<div flex="100" flex-gt-sm="33" ng-repeat="mission in vm.missions | filter:textToSearch as missionsFiltered">
+		<md-card class="ngo-card">
+			<div class="card-image" ng-style="{'background-image':'url({{mission.image || '../images/manitos.png'}})'}"></div>
+			<md-card-content>
+				<h3 class="md-headline">{{mission.name}}</h3>
+				<div>Desde: {{mission.startDate}}</div>
+				<div>Hasta: {{mission.toDate}}</div>
+				<p class="description">
+					{{mission.description}}
+				</p>
+			</md-card-content>
+			<md-card-footer>
+				<div ng-show="mission.telephone">Ong: {{mission.ong}}</div>
+			</md-card-footer>
+		</md-card>
+	</div>
+	<div ng-hide="missionsFiltered.length" class="no-results">
+		No se encontraron resultados
+	</div>
+</div>

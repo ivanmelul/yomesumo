@@ -1,0 +1,10 @@
+<div class="content" layout="column" flex="grow">
+	<div class="media {{media.social}}" ng-repeat="media in socialMedia" ng-class="{ active: $index == currentIndex}">
+		<i class="social-logo fa {{schema[media.social].icon}}" aria-hidden="true"></i>
+		<p class="message"><b>{{media.username}}</b> dijo: <br/>{{media.text}}</p>
+		<!--ul class="bottom">
+			<li><i class="fa {{schema[media.social].btn1Class}}"></i>{{media[schema[media.social].btn1Value]}}</li>
+			<li><i class="fa {{schema[media.social].btn2Class}}"></i>{{media[schema[media.social].btn2Value]}}</li>
+		</ul-->
+	</div>
+</div>
